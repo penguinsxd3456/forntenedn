@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ClaimRentSOL</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: monospace;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .wallet-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border: 2px solid #39ff14; /* neon green */
+      border-radius: 6px;
+      background: #1a1a1a;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: lowercase;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+    .wallet-btn:hover {
+      background: #2a2a2a;
+      box-shadow: 0 0 8px #39ff14;
+    }
+    .wallet-icon {
+      width: 20px;
+      height: 20px;
+    }
+    .container{max-width:900px;margin:0 auto;padding:20px}
+    .actions{margin-top:20px}
+    .btn-small{padding:8px 10px;border-radius:6px;border:none;background:#2a2a2a;color:#fff;cursor:pointer}
+    .muted{color:#9aa0a6;font-size:14px;margin-top:12px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ClaimRentSOL</h1>
+    <p class="muted">Reclaim rent from unused token accounts on Solana. Commission: 0.0001 SOL.</p>
+
+    <button id="walletBtn" class="wallet-btn">
+      <img src="https://cryptologos.cc/logos/phantom-phantom-logo.png" class="wallet-icon" alt="Phantom">
+      connect wallet
+    </button>
+
+    <div id="status" class="muted">Not connected</div>
+
+    <div class="actions">
+      <button id="scanBtn" class="btn-small">Scan empty token accounts</button>
+      <button id="cleanupNow" class="btn-small">Close selected & Claim</button>
+    </div>
+
+    <div id="results" style="margin-top:18px"></div>
+  </div>
+
+  <script src="https://unpkg.com/@solana/web3.js@1.84.0/lib/index.iife.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
